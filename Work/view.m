@@ -11,8 +11,10 @@ z=linspace(1,1,length);
 xlabel('vres');
 ylabel('hres');
 
-s=0.5;
-axis([0 hres 0 vres]);
+s=2;
+axis([0 hres*s 0 vres*s]);
+%set(gca,'xtick',[0:1:hres*s],'XColor','k');
+%set(gca,'ytick',[0:1:vres*s],'YColor','r');
 %figure;
 %% ray.o = Point3D(s * (x - hres / 2.0 + 0.5), s * (y - vres / 2.0 + 0.5), zw);s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw)
 px = s*(x - hres / 2.0 + 0.5);
@@ -20,11 +22,16 @@ py = s*(y - vres / 2.0 + 0.5);
 
 for n =(px)
     for i=(py)
-
         stem(n, i); 
         hold on;
     end;
 end;
-        
 
+a =(-5:1:5);
+b=linspace(5,5,length+1);
+stem(b, a,'MarkerFaceColor','red','LineStyle',':');
+stem(a, b,'MarkerFaceColor','red','LineStyle',':');
+b=linspace(-5,-5,length+1);
+stem(b, a,'MarkerFaceColor','red','LineStyle',':');
+stem(a, b,'MarkerFaceColor','red','LineStyle',':');
 grid on;
