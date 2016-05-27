@@ -18,8 +18,8 @@ axis([0 hres*s 0 vres*s]);
 %% ray.o = Point3D(s * (x - hres / 2.0 + 0.5), s * (y - vres / 2.0 + 0.5), zw);s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw)
 pnlength = 2;
 
-px = x - hres*0.5+0;
-py = y - vres*0.5+0;
+px = x - hres*0.5+0.5/length;
+py = y - vres*0.5+0.5/length;
 for n =(px)
     for i=(py)
         for px_n = (1:pnlength)
